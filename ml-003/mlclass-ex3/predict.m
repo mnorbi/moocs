@@ -26,7 +26,7 @@ a_1 = [bias X];
 a_2 = [bias sigmoid(a_1*Theta1')];%hidden layer
 a_3 = [sigmoid(a_2*Theta2')];%output layer
 
-[_ p] = max(a_3, [], 2);%each row contains a probability distribution for the label pool. We want the label with the maximal probability.
+[_ p] = max(a_3, [], 2);%each row contains an unnormalized distribution for the label pool. We want the label with the maximum prediction.
 
 % =========================================================================
 

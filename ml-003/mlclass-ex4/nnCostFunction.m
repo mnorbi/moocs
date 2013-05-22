@@ -62,23 +62,43 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+% Part 1:
+%feed forward
+bias = ones(m,1);
+a_1 = [bias X];
+z_2 = a_1*Theta1';
+a_2 = [bias sigmoid(z_2)];%hidden layer
+z_3 = a_2*Theta2';
+h = [sigmoid(z_3)];%output layer, m rows and num_labels columns
 
+% for loop version
+%for i = 1:m,
+%	yBinary = zeros(num_labels,1);
+%	yBinary(y(i)) = 1;
+%	J -= log(h(i,:))*yBinary+log(1-h(i,:))*(1-yBinary);
+%end;
+%J = J/m;
 
+% vectorized version of the unregularized cost function
+% convert y vector into binary sparse yBinary[m x num_labels] matrix representation
+yBinary = sparse(m,num_labels);
+yBinary((y-1)*m.+[1:m]') = 1;%vector-indexing the matrix, the vector indexing runs down and then to the right (columnar wise)
+% compute cost
+J= -1/m * sum(sum(log(h).*yBinary+log(1-h).*(1-yBinary)));
 
+% regularization
+J += lambda/2/m*sum([Theta1(:, 2:end)(:);Theta2(:,2:end)(:)].**2); %ommitting the first theta columns, the 1 values
 
+% backpropagation
+d3 = h - yBinary;
+Theta2_grad = 1/m * d3' * a_2;
 
+d2 = d3*Theta2(:, 2:end) .* sigmoidGradient(z_2);
+Theta1_grad = 1/m * d2' * a_1;
 
-
-
-
-
-
-
-
-
-
-
-
+%gradient regularization
+Theta2_grad(:,2:end) = Theta2_grad(:,2:end) .+ lambda/m * Theta2(:,2:end);
+Theta1_grad(:,2:end) = Theta1_grad(:,2:end) .+ lambda/m * Theta1(:,2:end);
 
 % -------------------------------------------------------------
 
