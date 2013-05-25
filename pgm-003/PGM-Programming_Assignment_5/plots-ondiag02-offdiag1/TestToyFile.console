@@ -1,0 +1,61 @@
+MCMCInference took 281.19 sec.
+Calculating errors took: 0 sec.
+Progress: 1/15, estimated time left to complete: 4102.7 sec.
+MCMCInference took 281.17 sec.
+Calculating errors took: 0 sec.
+Progress: 2/15, estimated time left to complete: 3783.7 sec.
+MCMCInference took 283.62 sec.
+Calculating errors took: 0 sec.
+Progress: 3/15, estimated time left to complete: 3494.3 sec.
+Saved results for MCMC with transition Gibbs
+MCMCInference took 133.97 sec.
+Calculating errors took: 0 sec.
+Progress: 4/15, estimated time left to complete: 3353 sec.
+MCMCInference took 136.02 sec.
+Calculating errors took: 0 sec.
+Progress: 5/15, estimated time left to complete: 2725.9 sec.
+MCMCInference took 137.6 sec.
+Calculating errors took: 0 sec.
+Progress: 6/15, estimated time left to complete: 2262.6 sec.
+Saved results for MCMC with transition MHUniform
+MCMCInference took 281.54 sec.
+Calculating errors took: 0 sec.
+Progress: 7/15, estimated time left to complete: 2280.3 sec.
+MCMCInference took 278.12 sec.
+Calculating errors took: 0 sec.
+Progress: 8/15, estimated time left to complete: 1996.1 sec.
+MCMCInference took 282 sec.
+Calculating errors took: 0 sec.
+Progress: 9/15, estimated time left to complete: 1714 sec.
+Saved results for MCMC with transition MHGibbs
+error: `scomponents' undefined near line 29 column 25
+error: called from:
+error:   c:\work\coursera\probabilistic-graphical-models\PGM
+error:   c:\work\coursera\probabilistic-graphical-models\PGM
+error:   c:\work\coursera\probabilistic-graphical-models\PGM
+error:   c:\work\coursera\probabilistic-graphical-models\PGM
+octave-3.6.2.exe:3> addp
+addpath      addpref      addproperty
+octave-3.6.2.exe:3> addpath  gaimc
+octave-3.6.2.exe:4> TestToyFile
+MCMCInference took 256.92 sec.
+Calculating errors took: 0 sec.
+Progress: 1/6, estimated time left to complete: 1338 sec.
+MCMCInference took 259.35 sec.
+Calculating errors took: 0 sec.
+Progress: 2/6, estimated time left to complete: 1070.6 sec.
+MCMCInference took 261.69 sec.
+Calculating errors took: 0 sec.
+Progress: 3/6, estimated time left to complete: 805.47 sec.
+Saved results for MCMC with transition MHSwendsenWang1
+MCMCInference took 273.07 sec.
+Calculating errors took: 0 sec.
+Progress: 4/6, estimated time left to complete: 643.18 sec.
+MCMCInference took 275.49 sec.
+Calculating errors took: 0.0010002 sec.
+Progress: 5/6, estimated time left to complete: 313.92 sec.
+MCMCInference took 274.31 sec.
+Calculating errors took: 0 sec.
+Progress: 6/6, estimated time left to complete: 0 sec.
+Saved results for MCMC with transition MHSwendsenWang2
+Done, time consumed: 2052.8 sec.
