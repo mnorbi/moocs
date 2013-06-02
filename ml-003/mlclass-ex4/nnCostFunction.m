@@ -84,6 +84,7 @@ h = [sigmoid(z_3)];%output layer, m rows and num_labels columns
 yBinary = sparse(m,num_labels);
 yBinary((y-1)*m.+[1:m]') = 1;%vector-indexing the matrix, the vector indexing runs down and then to the right (columnar wise)
 % compute cost
+
 J= -1/m * sum(sum(log(h).*yBinary+log(1-h).*(1-yBinary)));
 
 % regularization
