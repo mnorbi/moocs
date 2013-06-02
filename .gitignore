@@ -1,0 +1,15 @@
+*.class
+target/
+*.ear
+*.war
+delme*
+*.sc
+octave-core
+*login_data.mat
+.DS_Store
+assignment_quiz_question5_analysis.txt 
+*.log
+inference/
+.SyncTrash/
+.SyncIgnore
+.SyncID
