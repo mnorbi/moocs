@@ -1,0 +1,660 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\begin{document}
+\section{Dictionary \# 1}
+
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{1}   &  3  &    &   & -1 x_{5} & -2 x_{7}\\
+ x_{3}   &  -4 & + 1 x_{2} & -1 x_{4} &   & -1 x_{7}\\
+ x_{6}   &  7 & -1 x_{2} &   & -2 x_{5} &   \\
+\hline
+z    &  1 & -1 x_{2} & + 2 x_{4} & + 3 x_{5} & + 1 x_{7}\\
+\end{array}\]
+
+\subsection{Initialization Phase: Aux Problem Solving}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{1}   &  3  &    &   & -1 x_{5} & -2 x_{7} & + 1 x_{0}\\
+ x_{3}   &  -4 & + 1 x_{2} & -1 x_{4} &   & -1 x_{7} & + 1 x_{0}\\
+ x_{6}   &  7 & -1 x_{2} &   & -2 x_{5} &   & + 1 x_{0}\\
+\hline
+z    &  0  &    &    &    &   & -1 x_{0}\\
+\end{array}\]
+$ x_{3} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{1}   &  7 & -1 x_{2} & + 1 x_{4} & -1 x_{5} & -1 x_{7} & + 1 x_{3}\\
+ x_{0}   &  4 & -1 x_{2} & + 1 x_{4} &   & + 1 x_{7} & + 1 x_{3}\\
+ x_{6}   &  11 & -2 x_{2} & + 1 x_{4} & -2 x_{5} & + 1 x_{7} & + 1 x_{3}\\
+\hline
+z    &  -4 & + 1 x_{2} & -1 x_{4} &   & -1 x_{7} & -1 x_{3}\\
+\end{array}\]
+
+
+ $ x_{2} $ enters and $ x_{0} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{1}   &  3 & + 1 x_{0} &   & -1 x_{5} & -2 x_{7} &   \\
+ x_{2}   &  4 & -1 x_{0} & + 1 x_{4} &   & + 1 x_{7} & + 1 x_{3}\\
+ x_{6}   &  3 & + 2 x_{0} & -1 x_{4} & -2 x_{5} & -1 x_{7} & -1 x_{3}\\
+\hline
+z    &  0 & -1 x_{0} &    &    &    &   \\
+\end{array}\]
+
+
+  Final Dictionary
+
+\subsection{Optimization Phase}
+
+Problem is feasible Initialization phase yields a zero answer 
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{1}   &  3  &   & -1 x_{5} & -2 x_{7} &   \\
+ x_{2}   &  4 & + 1 x_{4} &   & + 1 x_{7} & + 1 x_{3}\\
+ x_{6}   &  3 & -1 x_{4} & -2 x_{5} & -1 x_{7} & -1 x_{3}\\
+\hline
+z    &  -3 & + 1 x_{4} & + 3 x_{5} &   & -1 x_{3}\\
+\end{array}\]
+
+
+\section{Dictionary \# 2}
+
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  -1 & + 1  x_{1} & -1  x_{2}\\
+ x_{4}   &  -2 & + 1  x_{1} & + 2  x_{2}\\
+ x_{5}   &  1  &   & -1  x_{2}\\
+\hline
+z    &  0 & -2  x_{1} & -1  x_{2}\\
+\end{array}\]
+
+\subsection{Initialization Phase: Aux Problem Solving}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  -1 & + 1  x_{1} & -1  x_{2} & + 1  x_{0}\\
+ x_{4}   &  -2 & + 1  x_{1} & + 2  x_{2} & + 1  x_{0}\\
+ x_{5}   &  1  &   & -1  x_{2} & + 1  x_{0}\\
+\hline
+z    &  0  &    &   & -1  x_{0}\\
+\end{array}\]
+$ x_{4} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  1  &   & -3  x_{2} & + 1  x_{4}\\
+ x_{0}   &  2 & -1  x_{1} & -2  x_{2} & + 1  x_{4}\\
+ x_{5}   &  3 & -1  x_{1} & -3  x_{2} & + 1  x_{4}\\
+\hline
+z    &  -2 & + 1  x_{1} & + 2  x_{2} & -1  x_{4}\\
+\end{array}\]
+
+
+ $ x_{1} $ enters and $ x_{0} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  1  &   & -3  x_{2} & + 1  x_{4}\\
+ x_{1}   &  2 & -1  x_{0} & -2  x_{2} & + 1  x_{4}\\
+ x_{5}   &  1 & + 1  x_{0} & -1  x_{2} &   \\
+\hline
+z    &  0 & -1  x_{0} &    &   \\
+\end{array}\]
+Final Dictionary
+
+\subsection{Optimization Phase}
+
+Problem is feasible Initialization phase yields a zero answer 
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  1 & -3  x_{2} & + 1  x_{4}\\
+ x_{1}   &  2 & -2  x_{2} & + 1  x_{4}\\
+ x_{5}   &  1 & -1  x_{2} &   \\
+\hline
+z    &  -4 & + 3  x_{2} & -2  x_{4}\\
+\end{array}\]
+
+
+\section{Dictionary \# 3}
+
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  10 & -1  x_{1} &   & + 1  x_{3}\\
+ x_{5}   &  12  &   & + 1  x_{2} & -1  x_{3}\\
+ x_{6}   &  14 & + 1  x_{1} & -1  x_{2} & -1  x_{3}\\
+ x_{7}   &  -40  &    &   & + 1  x_{3}\\
+ x_{8}   &  -25  &   & + 1  x_{2} &   \\
+ x_{9}   &  -15 & + 1  x_{1} &    &   \\
+\hline
+z    &  0 & + 2  x_{1} & -3  x_{2} & + 1  x_{3}\\
+\end{array}\]
+\subsection{Initialization Phase: Aux Problem Solving}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  10 & -1  x_{1} &   & + 1  x_{3} & + 1  x_{0}\\
+ x_{5}   &  12  &   & + 1  x_{2} & -1  x_{3} & + 1  x_{0}\\
+ x_{6}   &  14 & + 1  x_{1} & -1  x_{2} & -1  x_{3} & + 1  x_{0}\\
+ x_{7}   &  -40  &    &   & + 1  x_{3} & + 1  x_{0}\\
+ x_{8}   &  -25  &   & + 1  x_{2} &   & + 1  x_{0}\\
+ x_{9}   &  -15 & + 1  x_{1} &    &   & + 1  x_{0}\\
+\hline
+z    &  0  &    &    &   & -1  x_{0}\\
+\end{array}\]
+$ x_{7} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  50 & -1  x_{1} &    &   & + 1  x_{7}\\
+ x_{5}   &  52  &   & + 1  x_{2} & -2  x_{3} & + 1  x_{7}\\
+ x_{6}   &  54 & + 1  x_{1} & -1  x_{2} & -2  x_{3} & + 1  x_{7}\\
+ x_{0}   &  40  &    &   & -1  x_{3} & + 1  x_{7}\\
+ x_{8}   &  15  &   & + 1  x_{2} & -1  x_{3} & + 1  x_{7}\\
+ x_{9}   &  25 & + 1  x_{1} &   & -1  x_{3} & + 1  x_{7}\\
+\hline
+z    &  -40  &    &   & + 1  x_{3} & -1  x_{7}\\
+\end{array}\]
+
+
+ $ x_{3} $ enters and $ x_{8} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  50 & -1  x_{1} &    &   & + 1  x_{7}\\
+ x_{5}   &  22  &   & -1  x_{2} & + 2  x_{8} & -1  x_{7}\\
+ x_{6}   &  24 & + 1  x_{1} & -3  x_{2} & + 2  x_{8} & -1  x_{7}\\
+ x_{0}   &  25  &   & -1  x_{2} & + 1  x_{8} &   \\
+ x_{3}   &  15  &   & + 1  x_{2} & -1  x_{8} & + 1  x_{7}\\
+ x_{9}   &  10 & + 1  x_{1} & -1  x_{2} & + 1  x_{8} &   \\
+\hline
+z    &  -25  &   & + 1  x_{2} & -1  x_{8} &   \\
+\end{array}\]
+
+
+ $ x_{2} $ enters and $ x_{6} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  50 & -1  x_{1} &    &   & + 1  x_{7}\\
+ x_{5}   &  14 & -0.333333 x_{1} & + 0.333333 x_{6} & + 1.333333 x_{8} & -0.666667 x_{7}\\
+ x_{2}   &  8 & + 0.333333 x_{1} & -0.333333 x_{6} & + 0.666667 x_{8} & -0.333333 x_{7}\\
+ x_{0}   &  17 & -0.333333 x_{1} & + 0.333333 x_{6} & + 0.333333 x_{8} & + 0.333333 x_{7}\\
+ x_{3}   &  23 & + 0.333333 x_{1} & -0.333333 x_{6} & -0.333333 x_{8} & + 0.666667 x_{7}\\
+ x_{9}   &  2 & + 0.666667 x_{1} & + 0.333333 x_{6} & + 0.333333 x_{8} & + 0.333333 x_{7}\\
+\hline
+z    &  -17 & + 0.333333 x_{1} & -0.333333 x_{6} & -0.333333 x_{8} & -0.333333 x_{7}\\
+\end{array}\]
+
+
+ $ x_{1} $ enters and $ x_{5} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  8 & + 3  x_{5} & -1  x_{6} & -4  x_{8} & + 3  x_{7}\\
+ x_{1}   &  42 & -3  x_{5} & + 1  x_{6} & + 4  x_{8} & -2  x_{7}\\
+ x_{2}   &  22 & -1  x_{5} &   & + 2  x_{8} & -1  x_{7}\\
+ x_{0}   &  3 & + 1  x_{5} &   & -1  x_{8} & + 1  x_{7}\\
+ x_{3}   &  37 & -1  x_{5} &   & + 1  x_{8} &   \\
+ x_{9}   &  30 & -2  x_{5} & + 1  x_{6} & + 3  x_{8} & -1  x_{7}\\
+\hline
+z    &  -3 & -1  x_{5} &   & + 1  x_{8} & -1  x_{7}\\
+\end{array}\]
+
+
+ $ x_{8} $ enters and $ x_{4} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{8}   &  2 & + 0.75 x_{5} & -0.25 x_{6} & -0.25 x_{4} & + 0.75 x_{7}\\
+ x_{1}   &  50  &    &   & -1  x_{4} & + 1  x_{7}\\
+ x_{2}   &  26 & + 0.5 x_{5} & -0.5 x_{6} & -0.5 x_{4} & + 0.5 x_{7}\\
+ x_{0}   &  1 & + 0.25 x_{5} & + 0.25 x_{6} & + 0.25 x_{4} & + 0.25 x_{7}\\
+ x_{3}   &  39 & -0.25 x_{5} & -0.25 x_{6} & -0.25 x_{4} & + 0.75 x_{7}\\
+ x_{9}   &  36 & + 0.25 x_{5} & + 0.25 x_{6} & -0.75 x_{4} & + 1.25 x_{7}\\
+\hline
+z    &  -1 & -0.25 x_{5} & -0.25 x_{6} & -0.25 x_{4} & -0.25 x_{7}\\
+\end{array}\]
+
+Final Dictionary
+
+
+Problem is Infeasible Initialization phase yields negative answer 
+
+
+\section{Dictionary \# 4}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  1  &   & -1 x_{1}\\
+ x_{3}   &  -2 & -1 x_{2} & + 2 x_{1}\\
+ x_{5}   &  0 & -2 x_{2} &   \\
+\hline
+z    &  1  &   & + 3 x_{1}\\
+\end{array}\]
+\subsection{Initialization Phase: Aux Problem Solving}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  1  &   & -1 x_{1} & + 1 x_{0}\\
+ x_{3}   &  -2 & -1 x_{2} & + 2 x_{1} & + 1 x_{0}\\
+ x_{5}   &  0 & -2 x_{2} &   & + 1 x_{0}\\
+\hline
+z    &  0  &    &   & -1 x_{0}\\
+\end{array}\]
+$ x_{3} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  3 & + 1 x_{2} & -3 x_{1} & + 1 x_{3}\\
+ x_{0}   &  2 & + 1 x_{2} & -2 x_{1} & + 1 x_{3}\\
+ x_{5}   &  2 & -1 x_{2} & -2 x_{1} & + 1 x_{3}\\
+\hline
+z    &  -2 & -1 x_{2} & + 2 x_{1} & -1 x_{3}\\
+\end{array}\]
+
+
+ $ x_{1} $ enters and $ x_{0} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  0 & -0.5 x_{2} & + 1.5 x_{0} & -0.5 x_{3}\\
+ x_{1}   &  1 & + 0.5 x_{2} & -0.5 x_{0} & + 0.5 x_{3}\\
+ x_{5}   &  0 & -2 x_{2} & + 1 x_{0} &   \\
+\hline
+z    &  0  &   & -1 x_{0} &   \\
+\end{array}\]
+Final Dictionary
+
+\subsection{Optimization Phase}
+
+Problem is feasible Initialization phase yields a zero answer 
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  0 & -0.5 x_{2} & -0.5 x_{3}\\
+ x_{1}   &  1 & + 0.5 x_{2} & + 0.5 x_{3}\\
+ x_{5}   &  0 & -2 x_{2} &   \\
+\hline
+z    &  4 & + 1.5 x_{2} & + 1.5 x_{3}\\
+\end{array}\]
+
+\section{Dictionary \# 5}
+
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{6}   &  -6 & -1 x_{4} & -3 x_{3} & + 2 x_{1} &   \\
+ x_{2}   &  -12  &   & -6 x_{3} & -1 x_{1} & -1 x_{5}\\
+ x_{8}   &  3 & + 1 x_{4} &   & -1 x_{1} & + 5 x_{5}\\
+ x_{9}   &  2  &    &    &   & -1 x_{5}\\
+ x_{7}   &  4  &   & -1 x_{3} &    &   \\
+\hline
+z    &  0 & + 2 x_{4} & + 1 x_{3} & -3 x_{1} & + 4 x_{5}\\
+\end{array}\]
+\subsection{Initialization Phase: Aux Problem Solving}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{6}   &  -6 & -1 x_{4} & -3 x_{3} & + 2 x_{1} &   & + 1 x_{0}\\
+ x_{2}   &  -12  &   & -6 x_{3} & -1 x_{1} & -1 x_{5} & + 1 x_{0}\\
+ x_{8}   &  3 & + 1 x_{4} &   & -1 x_{1} & + 5 x_{5} & + 1 x_{0}\\
+ x_{9}   &  2  &    &    &   & -1 x_{5} & + 1 x_{0}\\
+ x_{7}   &  4  &   & -1 x_{3} &    &   & + 1 x_{0}\\
+\hline
+z    &  0  &    &    &    &   & -1 x_{0}\\
+\end{array}\]
+$ x_{2} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{6}   &  6 & -1 x_{4} & + 3 x_{3} & + 3 x_{1} & + 1 x_{5} & + 1 x_{2}\\
+ x_{0}   &  12  &   & + 6 x_{3} & + 1 x_{1} & + 1 x_{5} & + 1 x_{2}\\
+ x_{8}   &  15 & + 1 x_{4} & + 6 x_{3} &   & + 6 x_{5} & + 1 x_{2}\\
+ x_{9}   &  14  &   & + 6 x_{3} & + 1 x_{1} &   & + 1 x_{2}\\
+ x_{7}   &  16  &   & + 5 x_{3} & + 1 x_{1} & + 1 x_{5} & + 1 x_{2}\\
+\hline
+z    &  -12  &   & -6 x_{3} & -1 x_{1} & -1 x_{5} & -1 x_{2}\\
+\end{array}\]
+Final Dictionary
+Problem is Infeasible Initialization phase yields negative answer 
+
+
+\section{Dictionary \# 6}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  0 & -1 x_{5} &   \\
+ x_{6}   &  2  &   & + 1 x_{3}\\
+ x_{2}   &  1 & -2 x_{5} & + 2 x_{3}\\
+ x_{1}   &  -3 & + 1 x_{5} & + 1 x_{3}\\
+\hline
+z    &  0 & + 6 x_{5} & -5 x_{3}\\
+\end{array}\]
+\subsection{Initialization Phase: Aux Problem Solving}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  0 & -1 x_{5} &   & + 1 x_{0}\\
+ x_{6}   &  2  &   & + 1 x_{3} & + 1 x_{0}\\
+ x_{2}   &  1 & -2 x_{5} & + 2 x_{3} & + 1 x_{0}\\
+ x_{1}   &  -3 & + 1 x_{5} & + 1 x_{3} & + 1 x_{0}\\
+\hline
+z    &  0  &    &   & -1 x_{0}\\
+\end{array}\]
+$ x_{1} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  3 & -2 x_{5} & -1 x_{3} & + 1 x_{1}\\
+ x_{6}   &  5 & -1 x_{5} &   & + 1 x_{1}\\
+ x_{2}   &  4 & -3 x_{5} & + 1 x_{3} & + 1 x_{1}\\
+ x_{0}   &  3 & -1 x_{5} & -1 x_{3} & + 1 x_{1}\\
+\hline
+z    &  -3 & + 1 x_{5} & + 1 x_{3} & -1 x_{1}\\
+\end{array}\]
+
+
+ $ x_{3} $ enters and $ x_{0} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  0 & -1 x_{5} & + 1 x_{0} &   \\
+ x_{6}   &  5 & -1 x_{5} &   & + 1 x_{1}\\
+ x_{2}   &  7 & -4 x_{5} & -1 x_{0} & + 2 x_{1}\\
+ x_{3}   &  3 & -1 x_{5} & -1 x_{0} & + 1 x_{1}\\
+\hline
+z    &  0  &   & -1 x_{0} &   \\
+\end{array}\]
+Final Dictionary
+Problem is feasible Initialization phase yields a zero answer 
+
+\subsection{Optimization Phase}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  0 & -1 x_{5} &   \\
+ x_{6}   &  5 & -1 x_{5} & + 1 x_{1}\\
+ x_{2}   &  7 & -4 x_{5} & + 2 x_{1}\\
+ x_{3}   &  3 & -1 x_{5} & + 1 x_{1}\\
+\hline
+z    &  -15 & + 11 x_{5} & -5 x_{1}\\
+\end{array}\]
+
+\section{Dictionary \# 7}
+
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  10 & + 1 x_{1} & -2 x_{2} & + 1 x_{3}\\
+ x_{5}   &  12 & + 1 x_{1} & + 1 x_{2} & -2 x_{3}\\
+ x_{6}   &  5  &   & + 1 x_{2} & + 1 x_{3}\\
+ x_{7}   &  -15  &   & + 1 x_{2} &   \\
+ x_{8}   &  -8  &    &   & + 1 x_{3}\\
+ x_{9}   &  5 & + 1 x_{1} &    &   \\
+\hline
+z    &  0 & + 1 x_{1} & -2 x_{2} & -4 x_{3}\\
+\end{array}\]
+\subsection{Initialization Phase: Aux Problem Solving}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  10 & + 1 x_{1} & -2 x_{2} & + 1 x_{3} & + 1 x_{0}\\
+ x_{5}   &  12 & + 1 x_{1} & + 1 x_{2} & -2 x_{3} & + 1 x_{0}\\
+ x_{6}   &  5  &   & + 1 x_{2} & + 1 x_{3} & + 1 x_{0}\\
+ x_{7}   &  -15  &   & + 1 x_{2} &   & + 1 x_{0}\\
+ x_{8}   &  -8  &    &   & + 1 x_{3} & + 1 x_{0}\\
+ x_{9}   &  5 & + 1 x_{1} &    &   & + 1 x_{0}\\
+\hline
+z    &  0  &    &    &   & -1 x_{0}\\
+\end{array}\]
+$ x_{7} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  25 & + 1 x_{1} & -3 x_{2} & + 1 x_{3} & + 1 x_{7}\\
+ x_{5}   &  27 & + 1 x_{1} &   & -2 x_{3} & + 1 x_{7}\\
+ x_{6}   &  20  &    &   & + 1 x_{3} & + 1 x_{7}\\
+ x_{0}   &  15  &   & -1 x_{2} &   & + 1 x_{7}\\
+ x_{8}   &  7  &   & -1 x_{2} & + 1 x_{3} & + 1 x_{7}\\
+ x_{9}   &  20 & + 1 x_{1} & -1 x_{2} &   & + 1 x_{7}\\
+\hline
+z    &  -15  &   & + 1 x_{2} &   & -1 x_{7}\\
+\end{array}\]
+
+
+ $ x_{2} $ enters and $ x_{8} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  4 & + 1 x_{1} & + 3 x_{8} & -2 x_{3} & -2 x_{7}\\
+ x_{5}   &  27 & + 1 x_{1} &   & -2 x_{3} & + 1 x_{7}\\
+ x_{6}   &  20  &    &   & + 1 x_{3} & + 1 x_{7}\\
+ x_{0}   &  8  &   & + 1 x_{8} & -1 x_{3} &   \\
+ x_{2}   &  7  &   & -1 x_{8} & + 1 x_{3} & + 1 x_{7}\\
+ x_{9}   &  13 & + 1 x_{1} & + 1 x_{8} & -1 x_{3} &   \\
+\hline
+z    &  -8  &   & -1 x_{8} & + 1 x_{3} &   \\
+\end{array}\]
+
+
+ $ x_{3} $ enters and $ x_{4} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  2 & + 0.5 x_{1} & + 1.5 x_{8} & -0.5 x_{4} & -1 x_{7}\\
+ x_{5}   &  23  &   & -3 x_{8} & + 1 x_{4} & + 3 x_{7}\\
+ x_{6}   &  22 & + 0.5 x_{1} & + 1.5 x_{8} & -0.5 x_{4} &   \\
+ x_{0}   &  6 & -0.5 x_{1} & -0.5 x_{8} & + 0.5 x_{4} & + 1 x_{7}\\
+ x_{2}   &  9 & + 0.5 x_{1} & + 0.5 x_{8} & -0.5 x_{4} &   \\
+ x_{9}   &  11 & + 0.5 x_{1} & -0.5 x_{8} & + 0.5 x_{4} & + 1 x_{7}\\
+\hline
+z    &  -6 & + 0.5 x_{1} & + 0.5 x_{8} & -0.5 x_{4} & -1 x_{7}\\
+\end{array}\]
+
+
+ $ x_{1} $ enters and $ x_{0} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  8 & -1 x_{0} & + 1 x_{8} &    &   \\
+ x_{5}   &  23  &   & -3 x_{8} & + 1 x_{4} & + 3 x_{7}\\
+ x_{6}   &  28 & -1 x_{0} & + 1 x_{8} &   & + 1 x_{7}\\
+ x_{1}   &  12 & -2 x_{0} & -1 x_{8} & + 1 x_{4} & + 2 x_{7}\\
+ x_{2}   &  15 & -1 x_{0} &    &   & + 1 x_{7}\\
+ x_{9}   &  17 & -1 x_{0} & -1 x_{8} & + 1 x_{4} & + 2 x_{7}\\
+\hline
+z    &  0 & -1 x_{0} &    &    &   \\
+\end{array}\]
+Final Dictionary
+
+Problem is feasible Initialization phase yields a zero answer 
+
+\subsection{Optimization Phase}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  8 & + 1 x_{8} &    &   \\
+ x_{5}   &  23 & -3 x_{8} & + 1 x_{4} & + 3 x_{7}\\
+ x_{6}   &  28 & + 1 x_{8} &   & + 1 x_{7}\\
+ x_{1}   &  12 & -1 x_{8} & + 1 x_{4} & + 2 x_{7}\\
+ x_{2}   &  15  &    &   & + 1 x_{7}\\
+ x_{9}   &  17 & -1 x_{8} & + 1 x_{4} & + 2 x_{7}\\
+\hline
+z    &  -50 & -5 x_{8} & + 1 x_{4} &   \\
+\end{array}\]
+
+\section{Dictionary 8}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  0.6 & -3 x_{1} & + 7.9 x_{2} & -2.1 x_{3}\\
+ x_{5}   &  -3.8 & + 6.2 x_{1} & -7.4 x_{2} & + 2.3 x_{3}\\
+ x_{6}   &  4.2 & -6 x_{1} & + 2.5 x_{2} & + 1.7 x_{3}\\
+ x_{7}   &  0.6 & -6.3 x_{1} & -7.7 x_{2} & + 7.7 x_{3}\\
+ x_{8}   &  4 & + 1.1 x_{1} & + 2.3 x_{2} & + 1.7 x_{3}\\
+ x_{9}   &  -1.9 & -1 x_{1} & -1.9 x_{2} & -1.4 x_{3}\\
+\hline
+z    &  0 & -4.9 x_{1} & -2.7 x_{2} & + 2.5 x_{3}\\
+\end{array}\]
+\subsection{Initialization Phase: Aux Problem Solving}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  0.6 & -3 x_{1} & + 7.9 x_{2} & -2.1 x_{3} & + 1 x_{0}\\
+ x_{5}   &  -3.8 & + 6.2 x_{1} & -7.4 x_{2} & + 2.3 x_{3} & + 1 x_{0}\\
+ x_{6}   &  4.2 & -6 x_{1} & + 2.5 x_{2} & + 1.7 x_{3} & + 1 x_{0}\\
+ x_{7}   &  0.6 & -6.3 x_{1} & -7.7 x_{2} & + 7.7 x_{3} & + 1 x_{0}\\
+ x_{8}   &  4 & + 1.1 x_{1} & + 2.3 x_{2} & + 1.7 x_{3} & + 1 x_{0}\\
+ x_{9}   &  -1.9 & -1 x_{1} & -1.9 x_{2} & -1.4 x_{3} & + 1 x_{0}\\
+\hline
+z    &  0  &    &    &   & -1 x_{0}\\
+\end{array}\]
+$ x_{5} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  4.4 & -9.2 x_{1} & + 15.3 x_{2} & -4.4 x_{3} & + 1 x_{5}\\
+ x_{0}   &  3.8 & -6.2 x_{1} & + 7.4 x_{2} & -2.3 x_{3} & + 1 x_{5}\\
+ x_{6}   &  8 & -12.2 x_{1} & + 9.9 x_{2} & -0.6 x_{3} & + 1 x_{5}\\
+ x_{7}   &  4.4 & -12.5 x_{1} & -0.3 x_{2} & + 5.4 x_{3} & + 1 x_{5}\\
+ x_{8}   &  7.8 & -5.1 x_{1} & + 9.7 x_{2} & -0.6 x_{3} & + 1 x_{5}\\
+ x_{9}   &  1.9 & -7.2 x_{1} & + 5.5 x_{2} & -3.7 x_{3} & + 1 x_{5}\\
+\hline
+z    &  -3.8 & + 6.2 x_{1} & -7.4 x_{2} & + 2.3 x_{3} & -1 x_{5}\\
+\end{array}\]
+
+
+ $ x_{1} $ enters and $ x_{9} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  1.97222222222 & + 1.277778 x_{9} & + 8.272222 x_{2} & + 0.327778 x_{3} & -0.277778 x_{5}\\
+ x_{0}   &  2.16388888889 & + 0.861111 x_{9} & + 2.663889 x_{2} & + 0.886111 x_{3} & + 0.138889 x_{5}\\
+ x_{6}   &  4.78055555556 & + 1.694444 x_{9} & + 0.580556 x_{2} & + 5.669444 x_{3} & -0.694444 x_{5}\\
+ x_{7}   &  1.10138888889 & + 1.736111 x_{9} & -9.848611 x_{2} & + 11.823611 x_{3} & -0.736111 x_{5}\\
+ x_{8}   &  6.45416666667 & + 0.708333 x_{9} & + 5.804167 x_{2} & + 2.020833 x_{3} & + 0.291667 x_{5}\\
+ x_{1}   &  0.263888888889 & -0.138889 x_{9} & + 0.763889 x_{2} & -0.513889 x_{3} & + 0.138889 x_{5}\\
+\hline
+z    &  -2.16388888889 & -0.861111 x_{9} & -2.663889 x_{2} & -0.886111 x_{3} & -0.138889 x_{5}\\
+\end{array}\]
+Final Dictionary
+Problem is Infeasible Initialization phase yields negative answer 
+
+\section{Dictionary \# 9}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  -3.8 & + 3.3 x_{1} & + 6.4 x_{2} & -4.2 x_{3}\\
+ x_{5}   &  -3.2 & + 2.6 x_{1} & -4.5 x_{2} & + 0.5 x_{3}\\
+ x_{6}   &  2.4 & -6.4 x_{1} & -4.3 x_{2} & -0.8 x_{3}\\
+ x_{7}   &  3.9 & + 1 x_{1} & + 4.8 x_{2} & -6.3 x_{3}\\
+ x_{8}   &  0.3 & + 5.7 x_{1} & + 4.6 x_{2} & -6 x_{3}\\
+ x_{9}   &  -4.7 & -0.5 x_{1} & -0.8 x_{2} & + 7.2 x_{3}\\
+\hline
+z    &  0 & -2.4 x_{1} & -2.7 x_{2} & -1.5 x_{3}\\
+\end{array}\]
+\subsection{Initialization Phase: Aux Problem Solving}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  -3.8 & + 3.3 x_{1} & + 6.4 x_{2} & -4.2 x_{3} & + 1 x_{0}\\
+ x_{5}   &  -3.2 & + 2.6 x_{1} & -4.5 x_{2} & + 0.5 x_{3} & + 1 x_{0}\\
+ x_{6}   &  2.4 & -6.4 x_{1} & -4.3 x_{2} & -0.8 x_{3} & + 1 x_{0}\\
+ x_{7}   &  3.9 & + 1 x_{1} & + 4.8 x_{2} & -6.3 x_{3} & + 1 x_{0}\\
+ x_{8}   &  0.3 & + 5.7 x_{1} & + 4.6 x_{2} & -6 x_{3} & + 1 x_{0}\\
+ x_{9}   &  -4.7 & -0.5 x_{1} & -0.8 x_{2} & + 7.2 x_{3} & + 1 x_{0}\\
+\hline
+z    &  0  &    &    &   & -1 x_{0}\\
+\end{array}\]
+$ x_{9} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  0.9 & + 3.8 x_{1} & + 7.2 x_{2} & -11.4 x_{3} & + 1 x_{9}\\
+ x_{5}   &  1.5 & + 3.1 x_{1} & -3.7 x_{2} & -6.7 x_{3} & + 1 x_{9}\\
+ x_{6}   &  7.1 & -5.9 x_{1} & -3.5 x_{2} & -8 x_{3} & + 1 x_{9}\\
+ x_{7}   &  8.6 & + 1.5 x_{1} & + 5.6 x_{2} & -13.5 x_{3} & + 1 x_{9}\\
+ x_{8}   &  5 & + 6.2 x_{1} & + 5.4 x_{2} & -13.2 x_{3} & + 1 x_{9}\\
+ x_{0}   &  4.7 & + 0.5 x_{1} & + 0.8 x_{2} & -7.2 x_{3} & + 1 x_{9}\\
+\hline
+z    &  -4.7 & -0.5 x_{1} & -0.8 x_{2} & + 7.2 x_{3} & -1 x_{9}\\
+\end{array}\]
+
+
+ $ x_{3} $ enters and $ x_{4} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  0.0789473684211 & + 0.333333 x_{1} & + 0.631579 x_{2} & -0.087719 x_{4} & + 0.087719 x_{9}\\
+ x_{5}   &  0.971052631579 & + 0.866667 x_{1} & -7.931579 x_{2} & + 0.587719 x_{4} & + 0.412281 x_{9}\\
+ x_{6}   &  6.46842105263 & -8.566667 x_{1} & -8.552632 x_{2} & + 0.701754 x_{4} & + 0.298246 x_{9}\\
+ x_{7}   &  7.53421052632 & -3 x_{1} & -2.926316 x_{2} & + 1.184211 x_{4} & -0.184211 x_{9}\\
+ x_{8}   &  3.95789473684 & + 1.8 x_{1} & -2.936842 x_{2} & + 1.157895 x_{4} & -0.157895 x_{9}\\
+ x_{0}   &  4.13157894737 & -1.9 x_{1} & -3.747368 x_{2} & + 0.631579 x_{4} & + 0.368421 x_{9}\\
+\hline
+z    &  -4.13157894737 & + 1.9 x_{1} & + 3.747368 x_{2} & -0.631579 x_{4} & -0.368421 x_{9}\\
+\end{array}\]
+
+
+ $ x_{1} $ enters and $ x_{6} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  0.330636903543 & -0.038911 x_{6} & + 0.298792 x_{2} & -0.060414 x_{4} & + 0.099324 x_{9}\\
+ x_{5}   &  1.6254454229 & -0.101167 x_{6} & -8.796826 x_{2} & + 0.658714 x_{4} & + 0.442453 x_{9}\\
+ x_{1}   &  0.755068605366 & -0.116732 x_{6} & -0.998362 x_{2} & + 0.081917 x_{4} & + 0.034815 x_{9}\\
+ x_{7}   &  5.26900471022 & + 0.350195 x_{6} & + 0.068769 x_{2} & + 0.938460 x_{4} & -0.288655 x_{9}\\
+ x_{8}   &  5.3170182265 & -0.210117 x_{6} & -4.733893 x_{2} & + 1.305345 x_{4} & -0.095228 x_{9}\\
+ x_{0}   &  2.69694859717 & + 0.221790 x_{6} & -1.850481 x_{2} & + 0.475937 x_{4} & + 0.302273 x_{9}\\
+\hline
+z    &  -2.69694859717 & -0.221790 x_{6} & + 1.850481 x_{2} & -0.475937 x_{4} & -0.302273 x_{9}\\
+\end{array}\]
+
+
+ $ x_{2} $ enters and $ x_{5} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{3}   &  0.385846550685 & -0.042347 x_{6} & -0.033966 x_{5} & -0.038040 x_{4} & + 0.114352 x_{9}\\
+ x_{2}   &  0.18477635846 & -0.0115 x_{6} & -0.113677 x_{5} & + 0.074881 x_{4} & + 0.050297 x_{9}\\
+ x_{1}   &  0.570594972867 & -0.105250 x_{6} & + 0.113491 x_{5} & + 0.007159 x_{4} & -0.0154 x_{9}\\
+ x_{7}   &  5.28171163243 & + 0.349404 x_{6} & -0.007818 x_{5} & + 0.943609 x_{4} & -0.285196 x_{9}\\
+ x_{8}   &  4.44230669842 & -0.155675 x_{6} & + 0.538137 x_{5} & + 0.950867 x_{4} & -0.333329 x_{9}\\
+ x_{0}   &  2.35502340827 & + 0.243071 x_{6} & + 0.210358 x_{5} & + 0.337371 x_{4} & + 0.2092 x_{9}\\
+\hline
+z    &  -2.35502340827 & -0.243071 x_{6} & -0.210358 x_{5} & -0.337371 x_{4} & -0.2092 x_{9}\\
+\end{array}\]
+Final Dictionary
+
+\section{Dictionary \# 10}
+
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  3 & + 3 x_{2} & -1 x_{3} & -1 x_{1}\\
+ x_{7}   &  -4  &   & -1 x_{3} & + 1 x_{1}\\
+ x_{6}   &  -20 & -1 x_{2} & + 1 x_{3} & + 4 x_{1}\\
+ x_{5}   &  11 & -1 x_{2} &   & -2 x_{1}\\
+ x_{8}   &  -4  &   & -1 x_{3} & + 1 x_{1}\\
+\hline
+z    &  0 & + 1 x_{2} & + 2 x_{3} & -2 x_{1}\\
+\end{array}\]
+\subsection{Initialization Phase: Aux Problem Solving}
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  3 & + 3 x_{2} & -1 x_{3} & -1 x_{1} & + 1 x_{0}\\
+ x_{7}   &  -4  &   & -1 x_{3} & + 1 x_{1} & + 1 x_{0}\\
+ x_{6}   &  -20 & -1 x_{2} & + 1 x_{3} & + 4 x_{1} & + 1 x_{0}\\
+ x_{5}   &  11 & -1 x_{2} &   & -2 x_{1} & + 1 x_{0}\\
+ x_{8}   &  -4  &   & -1 x_{3} & + 1 x_{1} & + 1 x_{0}\\
+\hline
+z    &  0  &    &    &   & -1 x_{0}\\
+\end{array}\]
+$ x_{6} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{4}   &  23 & + 4 x_{2} & -2 x_{3} & -5 x_{1} & + 1 x_{6}\\
+ x_{7}   &  16 & + 1 x_{2} & -2 x_{3} & -3 x_{1} & + 1 x_{6}\\
+ x_{0}   &  20 & + 1 x_{2} & -1 x_{3} & -4 x_{1} & + 1 x_{6}\\
+ x_{5}   &  31  &   & -1 x_{3} & -6 x_{1} & + 1 x_{6}\\
+ x_{8}   &  16 & + 1 x_{2} & -2 x_{3} & -3 x_{1} & + 1 x_{6}\\
+\hline
+z    &  -20 & -1 x_{2} & + 1 x_{3} & + 4 x_{1} & -1 x_{6}\\
+\end{array}\]
+
+
+ $ x_{1} $ enters and $ x_{4} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{1}   &  4.6 & + 0.8 x_{2} & -0.4 x_{3} & -0.2 x_{4} & + 0.2 x_{6}\\
+ x_{7}   &  2.2 & -1.4 x_{2} & -0.8 x_{3} & + 0.6 x_{4} & + 0.4 x_{6}\\
+ x_{0}   &  1.6 & -2.2 x_{2} & + 0.6 x_{3} & + 0.8 x_{4} & + 0.2 x_{6}\\
+ x_{5}   &  3.4 & -4.8 x_{2} & + 1.4 x_{3} & + 1.2 x_{4} & -0.2 x_{6}\\
+ x_{8}   &  2.2 & -1.4 x_{2} & -0.8 x_{3} & + 0.6 x_{4} & + 0.4 x_{6}\\
+\hline
+z    &  -1.6 & + 2.2 x_{2} & -0.6 x_{3} & -0.8 x_{4} & -0.2 x_{6}\\
+\end{array}\]
+
+
+ $ x_{2} $ enters and $ x_{5} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{1}   &  5.16666666667 & -0.166667 x_{5} & -0.166667 x_{3} &   & + 0.166667 x_{6}\\
+ x_{7}   &  1.20833333333 & + 0.291667 x_{5} & -1.208333 x_{3} & + 0.25 x_{4} & + 0.458333 x_{6}\\
+ x_{0}   &  0.0416666666667 & + 0.458333 x_{5} & -0.041667 x_{3} & + 0.25 x_{4} & + 0.291667 x_{6}\\
+ x_{2}   &  0.708333333333 & -0.208333 x_{5} & + 0.291667 x_{3} & + 0.25 x_{4} & -0.041667 x_{6}\\
+ x_{8}   &  1.20833333333 & + 0.291667 x_{5} & -1.208333 x_{3} & + 0.25 x_{4} & + 0.458333 x_{6}\\
+\hline
+z    &  -0.0416666666667 & -0.458333 x_{5} & + 0.041667 x_{3} & -0.25 x_{4} & -0.291667 x_{6}\\
+\end{array}\]
+
+
+ $ x_{3} $ enters and $ x_{0} $ leaves 
+
+ \[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{1}   &  5 & -2 x_{5} & + 4 x_{0} & -1 x_{4} & -1 x_{6}\\
+ x_{7}   &  -1.57651669497e-14 & -13 x_{5} & + 29 x_{0} & -7 x_{4} & -8 x_{6}\\
+ x_{3}   &  1 & + 11 x_{5} & -24 x_{0} & + 6 x_{4} & + 7 x_{6}\\
+ x_{2}   &  1 & + 3 x_{5} & -7 x_{0} & + 2 x_{4} & + 2 x_{6}\\
+ x_{8}   &  -1.57651669497e-14 & -13 x_{5} & + 29 x_{0} & -7 x_{4} & -8 x_{6}\\
+\hline
+z    &  0  &   & -1 x_{0} &    &   \\
+\end{array}\]
+Final Dictionary
+Problem is feasible Initialization phase yields a zero answer 
+\[\begin{array}{c| c c@{\hskip 2pt} c@{\hskip 2pt} c@{\hskip 2pt} }
+ x_{1}   &  5 & -2 x_{5} & -1 x_{4} & -1 x_{6}\\
+ x_{7}   &  -1.57651669497e-14 & -13 x_{5} & -7 x_{4} & -8 x_{6}\\
+ x_{3}   &  1 & + 11 x_{5} & + 6 x_{4} & + 7 x_{6}\\
+ x_{2}   &  1 & + 3 x_{5} & + 2 x_{4} & + 2 x_{6}\\
+ x_{8}   &  -1.57651669497e-14 & -13 x_{5} & -7 x_{4} & -8 x_{6}\\
+\hline
+z    &  -7 & + 29 x_{5} & + 16 x_{4} & + 18 x_{6}\\
+\end{array}\]
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,11 @@
+feasible_25_19__7.dict
+feasible_25_19__8.dict
+
+< are feasible >
+
+The rest are infeasible.
+
+
+For each dictionary file
+
+.out --> the expected output for that dictionary
